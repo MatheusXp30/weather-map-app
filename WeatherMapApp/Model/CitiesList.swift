@@ -40,7 +40,7 @@ struct City: Decodable {
 
 struct CityMainInformations: Decodable {
     let temperature: Float?
-    let pressure: Int?
+    let pressure: Float?
     let humidity: Int?
     let minimumTemperature: Float?
     let maximumTemperature: Float?

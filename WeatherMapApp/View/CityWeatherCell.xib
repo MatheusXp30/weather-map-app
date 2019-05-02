@@ -23,21 +23,21 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="85H-OC-Kcm">
-                    <rect key="frame" x="20" y="100" width="45" height="45"/>
+                    <rect key="frame" x="20" y="100" width="40" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="45" id="K7o-jt-5RM"/>
-                        <constraint firstAttribute="height" constant="45" id="YNF-60-hlw"/>
+                        <constraint firstAttribute="width" constant="40" id="K7o-jt-5RM"/>
+                        <constraint firstAttribute="height" constant="40" id="YNF-60-hlw"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0O-SK-tUu">
-                    <rect key="frame" x="73" y="104.5" width="109" height="36"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <rect key="frame" x="73" y="107.5" width="91.5" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7T-5P-wTV">
-                    <rect key="frame" x="458.5" y="92.5" width="56.5" height="60"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                    <rect key="frame" x="464" y="95.5" width="51" height="54"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="45"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -63,10 +63,11 @@
                 <constraint firstItem="b2A-Rk-E4q" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="FMK-Wy-QOM"/>
                 <constraint firstItem="85H-OC-Kcm" firstAttribute="top" secondItem="b2A-Rk-E4q" secondAttribute="bottom" constant="8" id="Jso-j2-9gh"/>
                 <constraint firstItem="85H-OC-Kcm" firstAttribute="leading" secondItem="b2A-Rk-E4q" secondAttribute="leading" id="QtQ-AC-Rez"/>
-                <constraint firstItem="D0O-SK-tUu" firstAttribute="centerY" secondItem="85H-OC-Kcm" secondAttribute="centerY" id="V8t-Zm-wxb"/>
+                <constraint firstItem="D0O-SK-tUu" firstAttribute="centerY" secondItem="85H-OC-Kcm" secondAttribute="centerY" constant="2.5" id="V8t-Zm-wxb"/>
                 <constraint firstItem="Ckw-TA-Ny5" firstAttribute="leading" secondItem="CxZ-4B-u25" secondAttribute="trailing" constant="8" id="XAr-Mo-8G8"/>
                 <constraint firstItem="Ckw-TA-Ny5" firstAttribute="centerY" secondItem="CxZ-4B-u25" secondAttribute="centerY" id="ZQs-oB-LsW"/>
-                <constraint firstItem="D0O-SK-tUu" firstAttribute="leading" secondItem="85H-OC-Kcm" secondAttribute="trailing" constant="8" id="kkj-Qy-nvh"/>
+                <constraint firstItem="CxZ-4B-u25" firstAttribute="top" relation="greaterThanOrEqual" secondItem="85H-OC-Kcm" secondAttribute="bottom" constant="50" id="enp-Af-7DH"/>
+                <constraint firstItem="D0O-SK-tUu" firstAttribute="leading" secondItem="85H-OC-Kcm" secondAttribute="trailing" constant="13" id="kkj-Qy-nvh"/>
                 <constraint firstItem="CxZ-4B-u25" firstAttribute="leading" secondItem="85H-OC-Kcm" secondAttribute="leading" id="spL-WH-cQw"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -75,6 +76,7 @@
                 <outlet property="cityLabel" destination="b2A-Rk-E4q" id="JuJ-RI-eoR"/>
                 <outlet property="maximumLabel" destination="Ckw-TA-Ny5" id="PjU-8E-4L1"/>
                 <outlet property="minimumLabel" destination="CxZ-4B-u25" id="c47-fN-16A"/>
+                <outlet property="temperatureLabel" destination="n7T-5P-wTV" id="sBh-Xa-NRm"/>
                 <outlet property="weatherIconImageView" destination="85H-OC-Kcm" id="RXm-jw-3hm"/>
                 <outlet property="weatherLabel" destination="D0O-SK-tUu" id="CRu-fe-hHc"/>
             </connections>

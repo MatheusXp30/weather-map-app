@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ShowWeatherListProtocol: class {
+    func reloadTableViewData()
+}
+
 class ShowWeatherList: UIView {
 
     @IBOutlet weak var tableView: UITableView!
@@ -44,6 +48,13 @@ extension ShowWeatherList: UITableViewDataSource {
         return cell
     }
     
+}
+
+extension ShowWeatherList: ShowWeatherListProtocol {
+    
+    func reloadTableViewData() {
+        tableView.reloadData()
+    }
 }
 
 extension ShowWeatherList {

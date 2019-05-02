@@ -12,11 +12,15 @@ class ShowWeatherViewController: UIViewController {
     
     @IBOutlet weak var showWeatherView: UIView!
     
+    // TODO Precisa disso?
     let viewModel = ShowWeatherViewModel(dataSource: ShowWeatherDataSource())
+    weak var showWeatherListManager: ShowWeatherListProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setViewModel()
+        viewModel.requestData()
     }
     
     private func setViewModel() {
@@ -26,9 +30,11 @@ class ShowWeatherViewController: UIViewController {
     private func loadShowWeatherListView(cities: [City]) {
         showWeatherView.subviews.forEach({ $0.removeFromSuperview() })
         if let showWeatherListView = Bundle.main.loadNibNamed("ShowWeatherList", owner: self, options: nil)!.first as? ShowWeatherList {
+            showWeatherListManager = showWeatherListView
             showWeatherListView.viewModel = ShowWeatherList.ViewModel(cities: cities)
             showWeatherListView.frame = showWeatherView.bounds
             showWeatherView.addSubview(showWeatherListView)
+            showWeatherListManager?.reloadTableViewData()
         }
     }
 
@@ -36,7 +42,7 @@ class ShowWeatherViewController: UIViewController {
 
 extension ShowWeatherViewController: ShowWeatherViewModelDelegate {
     func successCitiesInCycle(response: [City]) {
-        
+        loadShowWeatherListView(cities: response)
     }
     
     func failureCitiesInCycle(_ error: Error) {
