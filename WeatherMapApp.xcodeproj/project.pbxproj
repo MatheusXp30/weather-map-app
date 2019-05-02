@@ -15,13 +15,14 @@
 		960468EE227A70DC00C831AE /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960468ED227A70DC00C831AE /* Coordinate.swift */; };
 		960468F0227A84F300C831AE /* OpenWeatherMapApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960468EF227A84F300C831AE /* OpenWeatherMapApiManager.swift */; };
 		960B44502278E98A008BDAFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B444F2278E98A008BDAFF /* AppDelegate.swift */; };
-		960B44522278E98A008BDAFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B44512278E98A008BDAFF /* ViewController.swift */; };
+		960B44522278E98A008BDAFF /* ShowWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B44512278E98A008BDAFF /* ShowWeatherViewController.swift */; };
 		960B44552278E98A008BDAFF /* ShowWeather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 960B44532278E98A008BDAFF /* ShowWeather.storyboard */; };
 		960B44572278E98B008BDAFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 960B44562278E98A008BDAFF /* Assets.xcassets */; };
 		960B445A2278E98B008BDAFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 960B44582278E98B008BDAFF /* LaunchScreen.storyboard */; };
 		960B44652278E98B008BDAFF /* WeatherMapAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B44642278E98B008BDAFF /* WeatherMapAppTests.swift */; };
 		960B44702278E98B008BDAFF /* WeatherMapAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960B446F2278E98B008BDAFF /* WeatherMapAppUITests.swift */; };
 		9669C599227A85A3009A608B /* OpenWeatherMapApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9669C598227A85A3009A608B /* OpenWeatherMapApi.swift */; };
+		9669C59B227B665E009A608B /* ShowWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9669C59A227B665E009A608B /* ShowWeatherViewModel.swift */; };
 		A6CFEFC9D6F8E19B9EFB1FA1 /* Pods_WeatherMapApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBDF4910D11B78700453AA0 /* Pods_WeatherMapApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +57,7 @@
 		960468EF227A84F300C831AE /* OpenWeatherMapApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapApiManager.swift; sourceTree = "<group>"; };
 		960B444C2278E98A008BDAFF /* WeatherMapApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherMapApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		960B444F2278E98A008BDAFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		960B44512278E98A008BDAFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		960B44512278E98A008BDAFF /* ShowWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowWeatherViewController.swift; sourceTree = "<group>"; };
 		960B44542278E98A008BDAFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ShowWeather.storyboard; sourceTree = "<group>"; };
 		960B44562278E98A008BDAFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		960B44592278E98B008BDAFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 		960B446F2278E98B008BDAFF /* WeatherMapAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMapAppUITests.swift; sourceTree = "<group>"; };
 		960B44712278E98B008BDAFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9669C598227A85A3009A608B /* OpenWeatherMapApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapApi.swift; sourceTree = "<group>"; };
+		9669C59A227B665E009A608B /* ShowWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowWeatherViewModel.swift; sourceTree = "<group>"; };
 		E809EC9E62A9A95F2CD38C6E /* Pods-WeatherMapAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMapAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-WeatherMapAppUITests/Pods-WeatherMapAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EBC7BD37846D343A1E354560 /* Pods-WeatherMapAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMapAppTests.debug.xcconfig"; path = "Target Support Files/Pods-WeatherMapAppTests/Pods-WeatherMapAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F1B0AC69C2BFF128E72A90CC /* Pods-WeatherMapAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMapAppTests.release.xcconfig"; path = "Target Support Files/Pods-WeatherMapAppTests/Pods-WeatherMapAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -210,7 +212,7 @@
 		960B447E2278E9A2008BDAFF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				960B44512278E98A008BDAFF /* ViewController.swift */,
+				960B44512278E98A008BDAFF /* ShowWeatherViewController.swift */,
 				960B44532278E98A008BDAFF /* ShowWeather.storyboard */,
 			);
 			path = View;
@@ -219,6 +221,7 @@
 		960B447F2278E9A7008BDAFF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9669C59A227B665E009A608B /* ShowWeatherViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -454,11 +457,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				960468EE227A70DC00C831AE /* Coordinate.swift in Sources */,
-				960B44522278E98A008BDAFF /* ViewController.swift in Sources */,
+				960B44522278E98A008BDAFF /* ShowWeatherViewController.swift in Sources */,
 				960B44502278E98A008BDAFF /* AppDelegate.swift in Sources */,
 				960468EA227A600B00C831AE /* CitiesList.swift in Sources */,
 				9669C599227A85A3009A608B /* OpenWeatherMapApi.swift in Sources */,
 				960468EC227A70C300C831AE /* Weather.swift in Sources */,
+				9669C59B227B665E009A608B /* ShowWeatherViewModel.swift in Sources */,
 				960468F0227A84F300C831AE /* OpenWeatherMapApiManager.swift in Sources */,
 				960468E8227A5A8800C831AE /* Constants.swift in Sources */,
 			);

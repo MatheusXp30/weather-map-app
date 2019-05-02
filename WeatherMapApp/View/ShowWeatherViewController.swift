@@ -8,7 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ShowWeatherViewController: UIViewController {
+    
+    
+    
+    let viewModel = ShowWeatherViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
