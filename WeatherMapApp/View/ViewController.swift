@@ -12,7 +12,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let apiManager = OpenWeatherApiManager.shared
+        
+        apiManager.getCitiesInCycleList(latitude: -3.1, longitude: -60, numberOfReturns: 10) { (citiesList, error) in
+            let cities = citiesList?.cities
+            for city in cities! {
+                print(city.name!)
+            }
+        }
+        
     }
 
 
