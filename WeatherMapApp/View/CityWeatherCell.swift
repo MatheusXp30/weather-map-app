@@ -8,14 +8,43 @@
 
 import UIKit
 
-class CityWeatherCell: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+class CityWeatherCell: UITableViewCell {
+    
+    var viewModel: CityWeatherCell.ViewModel? {
+        didSet {
+            didSetViewModel()
+        }
     }
-    */
 
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var weatherIconImageView: UIImageView!
+    @IBOutlet weak var weatherLabel: UILabel!
+    @IBOutlet weak var minimumLabel: UILabel!
+    @IBOutlet weak var maximumLabel: UILabel!
+    
+    private func didSetViewModel() {
+        cityLabel.text = viewModel?.cityName
+        weatherLabel.text = viewModel?.weather
+        minimumLabel.text = viewModel?.minimumTemperature
+        maximumLabel.text = viewModel?.maximumTemperature
+    }
+    
+}
+
+extension CityWeatherCell {
+    
+    struct ViewModel {
+        var cityName: String?
+        var weather: String?
+        var minimumTemperature: String?
+        var maximumTemperature: String?
+        
+        init(city: City) {
+            cityName = city.name
+            weather = city.weather?.first?.description
+            minimumTemperature = city.main?.minimumTemperature == nil ? "" : "Min: \(city.main!.minimumTemperature!)"
+            maximumTemperature = city.main?.maximumTemperature == nil ? "" : "Max: \(city.main!.maximumTemperature!)"
+        }
+    }
+    
 }

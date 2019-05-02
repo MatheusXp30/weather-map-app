@@ -10,24 +10,37 @@ import UIKit
 
 class ShowWeatherViewController: UIViewController {
     
+    @IBOutlet weak var showWeatherView: UIView!
     
-    
-    let viewModel = ShowWeatherViewModel()
+    let viewModel = ShowWeatherViewModel(dataSource: ShowWeatherDataSource())
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let apiManager = OpenWeatherApiManager.shared
-        
-        apiManager.getCitiesInCycleList(latitude: -3.1, longitude: -60, numberOfReturns: 10) { (citiesList, error) in
-            let cities = citiesList?.cities
-            for city in cities! {
-                print(city.name!)
-            }
-        }
-        
+    }
+    
+    private func setViewModel() {
+        viewModel.delegate = self
     }
 
+    private func loadShowWeatherListView(cities: [City]) {
+        showWeatherView.subviews.forEach({ $0.removeFromSuperview() })
+        if let showWeatherListView = Bundle.main.loadNibNamed("ShowWeatherList", owner: self, options: nil)!.first as? ShowWeatherList {
+            showWeatherListView.viewModel = ShowWeatherList.ViewModel(cities: cities)
+            showWeatherListView.frame = showWeatherView.bounds
+            showWeatherView.addSubview(showWeatherListView)
+        }
+    }
 
 }
 
+extension ShowWeatherViewController: ShowWeatherViewModelDelegate {
+    func successCitiesInCycle(response: [City]) {
+        
+    }
+    
+    func failureCitiesInCycle(_ error: Error) {
+        
+    }
+    
+}

@@ -16,11 +16,11 @@ class OpenWeatherApiManager {
     
     private let provider = MoyaProvider<OpenWeatherApi>()
     
-    func getCitiesInCycleList(
+    func getCitiesInCycle(
         latitude: Float,
         longitude: Float,
         numberOfReturns: Int,
-        completion: @escaping (CitiesList?, Error?) -> Void
+        completion: @escaping ([City]?, Error?) -> Void
     ) {
         provider.request(.getCitiesInCycle(
             latitude: latitude,
@@ -31,7 +31,7 @@ class OpenWeatherApiManager {
             case .success(let value):
                 do {
                     let citiesList: CitiesList = try JSONDecoder().decode(CitiesList.self, from: value.data)
-                    completion(citiesList, nil)
+                    completion(citiesList.cities, nil)
                 } catch {
                     completion(nil, error)
                 }

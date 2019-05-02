@@ -17,12 +17,28 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bas-Pq-eu4">
+                                <rect key="frame" x="0.0" y="151" width="414" height="745"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Bas-Pq-eu4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8ds-eN-JHo"/>
+                            <constraint firstItem="Bas-Pq-eu4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XBl-Oc-zcP"/>
+                            <constraint firstAttribute="bottom" secondItem="Bas-Pq-eu4" secondAttribute="bottom" id="lxd-jm-DA0"/>
+                            <constraint firstItem="Bas-Pq-eu4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="107" id="m8j-Mf-ejo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="showWeatherView" destination="Bas-Pq-eu4" id="4vf-lK-bRc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
         </scene>
     </scenes>
 </document>
