@@ -8,13 +8,21 @@
 
 import UIKit
 
+protocol ShowWeatherListDelegate: class {
+    func weatherIconForRowAt(indexPath: IndexPath, weatherIcon: String)
+}
+
 protocol ShowWeatherListProtocol: class {
+    var delegate: ShowWeatherListDelegate? { get set }
     func reloadTableViewData()
+    func setWeatherIconForRowAt(indexPath: IndexPath, weatherIcon: UIImage)
 }
 
 class ShowWeatherList: UIView {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    weak var delegate: ShowWeatherListDelegate?
     
     var viewModel: ShowWeatherList.ViewModel? {
         didSet {
@@ -45,6 +53,10 @@ extension ShowWeatherList: UITableViewDataSource {
         let city = viewModel!.cities[indexPath.row]
         cell.viewModel = CityWeatherCell.ViewModel(city: city)
         
+        if let cityWeatherIcon = city.weather?.first?.icon {
+            delegate?.weatherIconForRowAt(indexPath: indexPath, weatherIcon: cityWeatherIcon)
+        }
+        
         return cell
     }
     
@@ -54,6 +66,18 @@ extension ShowWeatherList: ShowWeatherListProtocol {
     
     func reloadTableViewData() {
         tableView.reloadData()
+    }
+    
+    func setWeatherIconForRowAt(indexPath: IndexPath, weatherIcon: UIImage) {
+        
+        guard let visibleRows = tableView.indexPathsForVisibleRows else {
+            return
+        }
+        
+        if visibleRows.contains(indexPath) {
+            let cell = tableView.cellForRow(at: indexPath) as! CityWeatherCell
+            cell.weatherIconImageView.image = weatherIcon
+        }
     }
 }
 

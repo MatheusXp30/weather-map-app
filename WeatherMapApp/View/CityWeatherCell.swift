@@ -31,6 +31,10 @@ class CityWeatherCell: UITableViewCell {
         temperatureLabel.text = viewModel?.temperature
     }
     
+    override func prepareForReuse() {
+        weatherIconImageView.image = UIImage(named: "no_image")
+    }
+    
     // TODO
     func convertToCelcius(fahrenheit: Float) -> Float {
         return ( fahrenheit - 32 ) / 1.8

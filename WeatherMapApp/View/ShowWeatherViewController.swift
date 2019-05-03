@@ -31,6 +31,7 @@ class ShowWeatherViewController: UIViewController {
         showWeatherView.subviews.forEach({ $0.removeFromSuperview() })
         if let showWeatherListView = Bundle.main.loadNibNamed("ShowWeatherList", owner: self, options: nil)!.first as? ShowWeatherList {
             showWeatherListManager = showWeatherListView
+            showWeatherListManager?.delegate = self
             showWeatherListView.viewModel = ShowWeatherList.ViewModel(cities: cities)
             showWeatherListView.frame = showWeatherView.bounds
             showWeatherView.addSubview(showWeatherListView)
@@ -47,6 +48,20 @@ extension ShowWeatherViewController: ShowWeatherViewModelDelegate {
     
     func failureCitiesInCycle(_ error: Error) {
         
+    }
+    
+}
+
+extension ShowWeatherViewController: ShowWeatherListDelegate {
+    
+    func weatherIconForRowAt(indexPath: IndexPath, weatherIcon: String) {
+        if let url = URL(string: "\(Constants.weatherIconsBaseURL)/\(weatherIcon).png") {
+            Network().downloadImageFrom(url: url) { [unowned self] (image, error) in
+                if let image = image {
+                    self.showWeatherListManager?.setWeatherIconForRowAt(indexPath: indexPath, weatherIcon: image)
+                }
+            }
+        }
     }
     
 }
